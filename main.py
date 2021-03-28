@@ -1,16 +1,8 @@
-#Case switcher
+import pyttsx3
 
-text = str(input('Text: '))
-changedtext = ''
+engine = pyttsx3.init()
+engine.setProperty('rate', 90)
 
-for letters in text:
-    if letters.isupper() == True:
-        letters.lower()
-        changedtext += letters
-
-    else:
-        letters.upper()
-        changedtext += letters
-
-print(changedtext)
-print(letters)
+text = input("What do you want to say: ")
+engine.say(text)
+engine.runAndWait()
